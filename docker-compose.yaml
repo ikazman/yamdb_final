@@ -25,8 +25,7 @@ services:
       - db
 
   web:
-    build: .
-    restart: always
+    image: ikazmandockerhub/yamdb:latest
     volumes:
       - static_value:/code/static/
       - media_value:/code/media/
