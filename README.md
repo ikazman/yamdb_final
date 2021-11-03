@@ -81,23 +81,7 @@ docker-compose exec web python manage.py loaddata fixtures.json
 ```
 &nbsp;
 ---
-### Документация к api: http://127.0.0.1/redoc/
-&nbsp;
-
-### Примеры запросов:
-
-- регистрация нового пользователя:
-http://127.0.0.1/api/v1/auth/signup/
-
-- получение JWT-токена:
-http://127.0.0.1/api/v1/auth/token/
-
-- получение списка всех произведений:
-http://127.0.0.1/api/v1/titles/
-
-- получение списка всех отзывов:
-http://127.0.0.1/api/v1/titles/{title_id}/reviews/
-
+### Документация к api: http://217.28.228.130/redoc/
 &nbsp;
 
 ### Образ на DockerHub: ikazmandockerhub/yamdb:latest
