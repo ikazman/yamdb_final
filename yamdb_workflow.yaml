@@ -55,6 +55,7 @@ jobs:
         username: ${{ secrets.CLOUD_USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        stack_file_name: docker-compose.yaml
         script: |
           sudo docker pull ikazmandockerhub/yamdb:latest
           sudo docker-compose up
