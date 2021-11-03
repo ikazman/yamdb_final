@@ -6,26 +6,19 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ./.env
+      - ./.postgres.env
 
-  migrations:
+  web:
     image: ikazmandockerhub/yamdb:latest
+    restart: always
     command: >
       bash -c "
         ./manage.py makemigrations --no-input && \
         ./manage.py migrate --no-input && \
-        ./manage.py load_data --path static/data && \
+        ./manage.py load_data --path ./data && \
         ./manage.py collectstatic --no-input && \
         ./manage.py dumpdata > fixtures.json
       "
-    volumes:
-      - static_value:/code/static/
-      - media_value:/code/media/
-    depends_on:
-      - db
-
-  web:
-    image: ikazmandockerhub/yamdb:latest
     volumes:
       - static_value:/code/static/
       - media_value:/code/media/
