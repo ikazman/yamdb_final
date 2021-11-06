@@ -45,6 +45,12 @@ scp -r nginx/default.conf <username>@<ip-adress>:/home/<username>/
 ```
 6) Добавить в Secrets GitHub Actions переменные окружения:
 ```bash
+
+#на сервере отладка должна быть выключена
+DEBUG=True
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',] # явно указываем разрешенные хосты
+
 DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
 DB_NAME=<имя базы данных>
 POSTGRES_USER=<имя пользователя базы данных>
@@ -65,6 +71,16 @@ SSH_PASSPHRASE=<секретная фраза для SSH-ключа> # если 
 
 TELEGRAM_TO=<id пользователя, которому будет направлено сообщение>
 TELEGRAM_TOKEN=<токен бота, который будет направлять сообщение>
+
+
+# Для получения токена необходимо настроить отправку писем
+EMAIL_HOST=<SMTP сервер>
+EMAIL_HOST_USER=<полный адрес почтового пользователя>
+EMAIL_HOST_PASSWORD=<пароль>
+EMAIL_PORT=<порт>
+EMAIL_USE_TLS=<использует ли почта защищенное соединение>
+DEFAULT_FROM_EMAIL=<отправитель в заголовке письма>
+
 
 ```
 
