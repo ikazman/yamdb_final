@@ -47,7 +47,7 @@ scp -r nginx/default.conf <username>@<ip-adress>:/home/<username>/
 ```bash
 
 #на сервере отладка должна быть выключена
-DEBUG=True
+DEBUG=False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1',] # явно указываем разрешенные хосты
 
