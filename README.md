@@ -100,4 +100,4 @@ docker-compose exec web python manage.py loaddata fixtures.json
 ### Документация к api: http://217.28.228.130/redoc/
 &nbsp;
 
-### Образ на DockerHub: ikazmandockerhub/yamdb:latest
+### Образ на DockerHub: ikazmandockerhub/yamdb:latest 
